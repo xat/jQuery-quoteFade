@@ -11,7 +11,7 @@ jQuery Plugin that lets you simply loop through a bunch of quotes with a fade-ef
     });
 
     //HTML
-    <ul class=".quotes">
+    <ul class="quotes">
     	<li>Quote 1</li>
     	<li>Quote 2</li>
     	<li>Quote 3</li>
