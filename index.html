@@ -7,11 +7,22 @@
 		<script>
 		$(document).ready(function(){
 			$('.quotes').quoteFade();
+			$('.quotes2').quoteFade({
+				trigger: function(next) {
+					$('body').bind('click', next);
+				}
+			});
 		});
 		</script>
 	</head>
 	<body>
 	<ul class="quotes">
+		<li>First Quote</li>
+		<li>Second Quote</li>
+		<li>Third Quote</li>
+	</ul>
+	<hr />
+	<ul class="quotes2">
 		<li>First Quote</li>
 		<li>Second Quote</li>
 		<li>Third Quote</li>
