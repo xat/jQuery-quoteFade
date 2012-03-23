@@ -19,7 +19,6 @@
 				}
 				direction = direction || that.options.direction;
 				if (direction === 'backward') {
-					console.log('backward');
 					next = (cur === 0)?last:cur-1;
 				} else {
 					next = (cur === last)?0:cur+1;
