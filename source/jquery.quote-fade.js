@@ -10,12 +10,19 @@
 		that.options = $.extend({}, jQuery.fn.quoteFade.defaults, options);
 
 		var _startLooping = function(quotes) {
-			var block=false, cur=0, next=1, last=quotes.length-1;
+			var block=false, cur=0, next, last=quotes.length-1;
 			$(quotes).not(quotes[0]).hide();
 
-			var _gotoNext = function() {
+			var _goto = function(direction) {
 				if (block) {
 					return;
+				}
+				direction = direction || that.options.direction;
+				if (direction === 'backward') {
+					console.log('backward');
+					next = (cur === 0)?last:cur-1;
+				} else {
+					next = (cur === last)?0:cur+1;
 				}
 				block = true;
 				$(quotes[cur]).fadeOut(that.options.animationTime, function() {
@@ -23,14 +30,13 @@
 						block = false;
 					});
 					cur = next;
-					next = (next === last)?0:next+1;
 				});
 			};
 
 			if (!that.options.trigger) {
-				setInterval(_gotoNext, that.options.timer+(2*that.options.animationTime));
+				setInterval(_goto, that.options.timer+(2*that.options.animationTime));
 			} else {
-				that.options.trigger.call(that, _gotoNext);
+				that.options.trigger.call(that, _goto);
 			}
 		};
 
@@ -44,7 +50,7 @@
 	jQuery.fn.quoteFade.defaults = {
 		'trigger': null, // custom function you can use to trigger a cycle
 		'timer': 5000,
-		'animationTime': 500
-
+		'animationTime': 500,
+		'direction': 'backward'
 	};
 })(jQuery);

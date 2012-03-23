@@ -9,7 +9,9 @@
 			$('.quotes').quoteFade();
 			$('.quotes2').quoteFade({
 				trigger: function(next) {
-					$('body').bind('click', next);
+					$('body').bind('click', function() {
+						next();
+					});
 				}
 			});
 		});
