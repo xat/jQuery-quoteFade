@@ -24,8 +24,16 @@
 					next = (cur === last)?0:cur+1;
 				}
 				block = true;
+
+				if (that.options.onchangebefore) {
+					that.options.onchangebefore.call(that, $(quotes[cur]), $(quotes[next]));
+				}
+
 				$(quotes[cur]).fadeOut(that.options.animationTime, function() {
 					$(quotes[next]).fadeIn(that.options.animationTime, function() {
+						if (that.options.onchangeafter) {
+							that.options.onchangeafter.call(that, $(quotes[cur]), $(quotes[next]));
+						}
 						block = false;
 					});
 					cur = next;
@@ -48,6 +56,8 @@
 
 	jQuery.fn.quoteFade.defaults = {
 		'trigger': null, // custom function you can use to trigger a cycle
+		'onchangebefore': null,
+		'onchangeafter': null,
 		'timer': 5000,
 		'animationTime': 500,
 		'direction': 'backward'
