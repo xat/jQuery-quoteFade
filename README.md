@@ -1,11 +1,11 @@
-# jQuery Quote Fade
+# jQuery simpleFade
 
-jQuery Plugin that lets you simply loop through a bunch of quotes with a fade-effect.
+jQuery Plugin that lets you simply loop through a bunch of items with a fade-effect.
 
 ### Usage
 
     // JS
-    $('.quotes').quoteFade({
+    $('.quotes').simpleFade({
     	'timer': 5000, // Display time
 		'animationTime': 500 // Fade-Animation Time
     });

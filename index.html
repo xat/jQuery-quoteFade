@@ -1,33 +1,20 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<script src="lib/jquery-1.7.1.min.js"></script>
-		<script src="source/jquery.quote-fade.js"></script>
-		<script>
-		$(document).ready(function(){
-			$('.quotes').quoteFade();
-			$('.quotes2').quoteFade({
-				trigger: function(next) {
-					$('body').bind('click', function() {
-						next();
-					});
-				}
-			});
-		});
-		</script>
-	</head>
-	<body>
-	<ul class="quotes">
-		<li>First Quote</li>
-		<li>Second Quote</li>
-		<li>Third Quote</li>
-	</ul>
-	<hr />
-	<ul class="quotes2">
-		<li>First Quote</li>
-		<li>Second Quote</li>
-		<li>Third Quote</li>
-	</ul>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-latest.min.js "></script>
+        <script src="source/jquery.simple-fade.js"></script>
+        <script>
+        $(document).ready(function(){
+            $('.quotes').simpleFade();
+        });
+        </script>
+    </head>
+    <body>
+        <ul class="quotes">
+            <li>First Quote</li>
+            <li>Second Quote</li>
+            <li>Third Quote</li>
+        </ul>
+    </body>
 </html>

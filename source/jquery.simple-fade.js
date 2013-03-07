@@ -6,9 +6,9 @@
 
 (function($) {
 
-  jQuery.fn.simpleFade = function (options) {
+  $.fn.simpleFade = function (options) {
     var that = this;
-    that.options = $.extend({}, jQuery.fn.simpleFade.defaults, options);
+    that.options = $.extend({}, $.fn.simpleFade.defaults, options);
 
     var _init = function($el) {
       var cur = 0,
@@ -66,7 +66,7 @@
 
   };
 
-  jQuery.fn.simpleFade.defaults = {
+  $.fn.simpleFade.defaults = {
     'autoplay': true,
     'timer': 5000,
     'animationTime': 500,
