@@ -1,5 +1,5 @@
 /*
- * quoteFade - jQuery Plugin
+ * simpleFade - jQuery Plugin
  *
  * Copyright 2013 Simon Kusterer - simon@soped.com
  */
